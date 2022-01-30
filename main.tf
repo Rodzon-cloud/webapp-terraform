@@ -35,7 +35,7 @@ resource "aws_instance" "app_server" {
         yum update -y   ## Update each package already installed
         yum install -y httpd    ## Install Apache
         systemctl start httpd.service    ## Start Apache
-        systemctl enable httpd.service   ## Start Apache whenever the instance s                                          tarts up
+        systemctl enable httpd.service   ## Start Apache whenever the instance starts up
         echo "Hello World Apache from $(hostname -f)" > /var/www/html/index.html
     EOF
 }
